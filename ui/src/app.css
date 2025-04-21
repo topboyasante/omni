@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 44 42.86% 93.14%;
+		--foreground: 28.57 16.54% 24.9%;
+		--card: 42 100% 98.04%;
+		--card-foreground: 28.57 16.54% 24.9%;
+		--popover: 42 100% 98.04%;
+		--popover-foreground: 28.57 16.54% 24.9%;
+		--primary: 30 33.87% 48.63%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 40.65 34.83% 82.55%;
+		--secondary-foreground: 28.97 18.71% 30.39%;
+		--muted: 39 34.48% 88.63%;
+		--muted-foreground: 32.31 18.48% 41.37%;
+		--accent: 42.86 32.81% 74.9%;
+		--accent-foreground: 28.57 16.54% 24.9%;
+		--destructive: 9.84 54.7% 45.88%;
+		--destructive-foreground: 0 0% 100%;
+		--border: 40 31.43% 79.41%;
+		--input: 40 31.43% 79.41%;
+		--ring: 30 33.87% 48.63%;
+		--chart-1: 30 33.87% 48.63%;
+		--chart-2: 31.38 29.95% 42.55%;
+		--chart-3: 33.68 32.95% 33.92%;
+		--chart-4: 29.12 30.91% 56.86%;
+		--chart-5: 30 33.68% 62.75%;
+		--sidebar: 39 34.48% 88.63%;
+		--sidebar-foreground: 28.57 16.54% 24.9%;
+		--sidebar-primary: 30 33.87% 48.63%;
+		--sidebar-primary-foreground: 0 0% 100%;
+		--sidebar-accent: 42.86 32.81% 74.9%;
+		--sidebar-accent-foreground: 28.57 16.54% 24.9%;
+		--sidebar-border: 40 31.43% 79.41%;
+		--sidebar-ring: 30 33.87% 48.63%;
+		--font-sans: Libre Baskerville, serif;
+		--font-serif: Lora, serif;
+		--font-mono: IBM Plex Mono, monospace;
+		--radius: 0.25rem;
+		--shadow-2xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+		--shadow-xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+		--shadow-sm: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+		--shadow: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+		--shadow-md: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 2px 4px -1px hsl(28 13% 20% / 0.12);
+		--shadow-lg: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 4px 6px -1px hsl(28 13% 20% / 0.12);
+		--shadow-xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 8px 10px -1px hsl(28 13% 20% / 0.12);
+		--shadow-2xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.3);
+	}
+
+	.dark {
+		--background: 25 15.38% 15.29%;
+		--foreground: 39 34.48% 88.63%;
+		--card: 25.71 13.73% 20%;
+		--card-foreground: 39 34.48% 88.63%;
+		--popover: 25.71 13.73% 20%;
+		--popover-foreground: 39 34.48% 88.63%;
+		--primary: 30 33.68% 62.75%;
+		--primary-foreground: 25 15.38% 15.29%;
+		--secondary: 24.71 12.98% 25.69%;
+		--secondary-foreground: 39 34.48% 88.63%;
+		--muted: 25.71 13.73% 20%;
+		--muted-foreground: 38.4 17.73% 72.35%;
+		--accent: 24.44 17.88% 29.61%;
+		--accent-foreground: 39 34.48% 88.63%;
+		--destructive: 9.84 54.7% 45.88%;
+		--destructive-foreground: 0 0% 100%;
+		--border: 24.71 12.98% 25.69%;
+		--input: 24.71 12.98% 25.69%;
+		--ring: 30 33.68% 62.75%;
+		--chart-1: 30 33.68% 62.75%;
+		--chart-2: 29.12 30.91% 56.86%;
+		--chart-3: 30 33.87% 48.63%;
+		--chart-4: 31.38 29.95% 42.55%;
+		--chart-5: 33.68 32.95% 33.92%;
+		--sidebar: 25 15.38% 15.29%;
+		--sidebar-foreground: 39 34.48% 88.63%;
+		--sidebar-primary: 30 33.68% 62.75%;
+		--sidebar-primary-foreground: 25 15.38% 15.29%;
+		--sidebar-accent: 24.44 17.88% 29.61%;
+		--sidebar-accent-foreground: 39 34.48% 88.63%;
+		--sidebar-border: 24.71 12.98% 25.69%;
+		--sidebar-ring: 30 33.68% 62.75%;
+		--font-sans: Libre Baskerville, serif;
+		--font-serif: Lora, serif;
+		--font-mono: IBM Plex Mono, monospace;
+		--radius: 0.25rem;
+		--shadow-2xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+		--shadow-xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+		--shadow-sm: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+		--shadow: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+		--shadow-md: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 2px 4px -1px hsl(28 13% 20% / 0.12);
+		--shadow-lg: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 4px 6px -1px hsl(28 13% 20% / 0.12);
+		--shadow-xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 8px 10px -1px hsl(28 13% 20% / 0.12);
+		--shadow-2xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.3);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+body {
+	font-family: 'IBM Plex Sans Variable', sans-serif;
+}

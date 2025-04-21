@@ -26,7 +26,7 @@
 	let currentTheme = $state('system');
 
 	// This function sets the mode to the specified value and updates the current theme.
-	function switchMode(mode: 'light' | 'dark' | 'system') {
+	function switchTheme(mode: 'light' | 'dark' | 'system') {
 		currentTheme = mode;
 		setMode(mode);
 	}
@@ -36,15 +36,14 @@
 	{#each THEMES as { type, icon: Icon, label }}
 		{@const isActive = currentTheme === type}
 		<button
-			onclick={() => switchMode(type)}
+			onclick={() => switchTheme(type)}
 			aria-label={`Switch to ${label}`}
 			class="group relative size-6 rounded-full transition duration-200 ease-out"
 			title={`Switch to ${label}`}
 			type="button"
 		>
 			{#if isActive}
-				<!-- i'll change the red-500 later -->
-				<div class="-z-1 absolute inset-0 rounded-full bg-red-500"></div>
+				<div class="-z-1 absolute inset-0 rounded-full bg-muted"></div>
 			{/if}
 			<Icon
 				class={cn(
