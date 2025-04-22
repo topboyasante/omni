@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { DOCS_ROUTES } from './_components/routes';
+	import { DOCS_ROUTES } from './routes';
 
 	let { children } = $props();
 </script>
