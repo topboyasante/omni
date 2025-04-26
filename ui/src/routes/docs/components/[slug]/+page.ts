@@ -1,5 +1,5 @@
 export async function load({ params }) {
-    const post = await import(`../../../content/${params.slug}.md`);
+    const post = await import(`../../../../content/components/${params.slug}.md`);
     const metadata = post.metadata;
   
     const content = post.default;

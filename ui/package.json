@@ -43,9 +43,12 @@
 	"dependencies": {
 		"@fontsource-variable/ibm-plex-sans": "^5.2.5",
 		"@lucide/svelte": "^0.501.0",
+		"@types/prismjs": "^1.26.5",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"mode-watcher": "^1.0.2",
+		"prism-svelte": "^0.5.0",
+		"prismjs": "^1.30.0",
 		"tailwind-merge": "^3.2.0"
 	}
 }

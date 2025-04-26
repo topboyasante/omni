@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
 	import { cn } from '$lib/utils/cn';
 	import { Monitor, Moon, Sun } from '@lucide/svelte';
 	import { setMode } from 'mode-watcher';
