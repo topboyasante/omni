@@ -4,7 +4,7 @@
 			Omni
 		</h1>
 		<p class="text-muted-foreground mb-10 text-lg">
-			Elegant, user-friendly UI components and blocks for your SvelteKit projects. Easily integrate
+			Elegant, user-friendly, dependency-free (90% of the time, I swear) UI components and blocks for your SvelteKit projects. Easily integrate
 			into your applications. Open source and free for all.
 		</p>
 	</section>
