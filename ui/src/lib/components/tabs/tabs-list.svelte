@@ -12,7 +12,7 @@
 
 <div
 	class={cn(
-		'flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground',
+		'flex h-auto items-center justify-start text-muted-foreground border-b',
 		className
 	)}
 	role="tablist"

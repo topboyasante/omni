@@ -19,10 +19,10 @@
 <button
 	class={cn(
 		'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-		'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all',
+		'inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium ring-offset-background transition-all',
 		isActive
-			? 'bg-background text-foreground shadow-sm'
-			: 'hover:bg-accent hover:text-accent-foreground',
+			? 'border-b-[1.5px] border-primary text-primary'
+			: 'hover:text-primary/80',
 		className
 	)}
 	role="tab"

@@ -33,8 +33,8 @@
 	});
 </script>
 
-<div class="component-preview border rounded-lg shadow-sm">
-	<Tabs defaultValue="code">
+<div class="w-full">
+	<Tabs defaultValue="preview">
 		<TabsList>
 			<TabsTrigger value="preview">
 				<div>
@@ -47,38 +47,33 @@
 				</div>
 			</TabsTrigger>
 		</TabsList>
-		<TabsContent value="preview">
-			{#if selectedComponent}
-				<div class="p-4">
-					{#await selectedComponent}
-						<div class="p-4 text-gray-500 text-sm">Loading...</div>
-					{:then module}
-						<module.default />
-					{:catch}
-						<div class="p-4 text-red-500">Failed to load component</div>
-					{/await}
-				</div>
-			{:else}
-				<div class="p-4 text-gray-500">Component not found</div>
-			{/if}
-		</TabsContent>
-		<TabsContent value="code">
-			{#if codePromise}
-				<div class="p-4">
-					<pre class=" text-white p-4 rounded-lg overflow-auto">
-					<code class="language-svelte">{@html codeContent}</code>
-				</pre>
-				</div>
-			{:else}
-				<div class="p-4 text-gray-500">No code available</div>
-			{/if}
-		</TabsContent>
+		<div class="border rounded-lg my-5">
+			<TabsContent value="preview" class="flex justify-center items-center min-h-[250px]">
+				{#if selectedComponent}
+					<div class="p-4">
+						{#await selectedComponent}
+							<div class="p-4 text-gray-500 text-sm">Loading...</div>
+						{:then module}
+							<module.default />
+						{:catch}
+							<div class="p-4 text-red-500">Failed to load component</div>
+						{/await}
+					</div>
+				{:else}
+					<div class="p-4 text-gray-500">Component not found</div>
+				{/if}
+			</TabsContent>
+			<TabsContent value="code">
+				{#if codePromise}
+					<div class="p-4">
+						<pre class=" text-white p-4 rounded-lg overflow-auto">
+						<code class="language-svelte">{@html codeContent}</code>
+					</pre>
+					</div>
+				{:else}
+					<div class="p-4 text-gray-500">No code available</div>
+				{/if}
+			</TabsContent>
+		</div>
 	</Tabs>
 </div>
-
-<style>
-	.component-preview {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-</style>

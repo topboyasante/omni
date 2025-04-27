@@ -11,7 +11,7 @@
 
 	const { value, children, class: className }: TabProps = $props();
 
-	const { currentValue, onChange } = $derived(getTabContext()());
+	const { currentValue } = $derived(getTabContext()());
 
 	let isActive = $derived(currentValue === value);
 </script>
