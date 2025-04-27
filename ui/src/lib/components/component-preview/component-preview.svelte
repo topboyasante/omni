@@ -5,6 +5,10 @@
 	import 'prismjs/components/prism-typescript';
 	import 'prismjs/components/prism-javascript';
 	import 'prism-svelte';
+	import Tabs from '../tabs/tabs.svelte';
+	import TabsList from '../tabs/tabs-list.svelte';
+	import TabsTrigger from '../tabs/tabs-trigger.svelte';
+	import TabsContent from '../tabs/tabs-content.svelte';
 
 	interface ComponentPreviewProps {
 		name: string;
@@ -30,29 +34,46 @@
 </script>
 
 <div class="component-preview border rounded-lg shadow-sm">
-	{#if selectedComponent}
-		<div class="p-4">
-			{#await selectedComponent}
-				<div class="p-4 text-gray-500 text-sm">Loading...</div>
-			{:then module}
-				<module.default />
-			{:catch}
-				<div class="p-4 text-red-500">Failed to load component</div>
-			{/await}
-		</div>
-	{:else}
-		<div class="p-4 text-gray-500">Component not found</div>
-	{/if}
-
-	{#if codePromise}
-		<div class="p-4">
-			<pre class=" text-white p-4 rounded-lg overflow-auto">
-				<code class="language-svelte">{@html codeContent}</code>
-			</pre>
-		</div>
-	{:else}
-		<div class="p-4 text-gray-500">No code available</div>
-	{/if}
+	<Tabs defaultValue="code">
+		<TabsList>
+			<TabsTrigger value="preview">
+				<div>
+					<p>Preview</p>
+				</div>
+			</TabsTrigger>
+			<TabsTrigger value="code">
+				<div>
+					<p>Code</p>
+				</div>
+			</TabsTrigger>
+		</TabsList>
+		<TabsContent value="preview">
+			{#if selectedComponent}
+				<div class="p-4">
+					{#await selectedComponent}
+						<div class="p-4 text-gray-500 text-sm">Loading...</div>
+					{:then module}
+						<module.default />
+					{:catch}
+						<div class="p-4 text-red-500">Failed to load component</div>
+					{/await}
+				</div>
+			{:else}
+				<div class="p-4 text-gray-500">Component not found</div>
+			{/if}
+		</TabsContent>
+		<TabsContent value="code">
+			{#if codePromise}
+				<div class="p-4">
+					<pre class=" text-white p-4 rounded-lg overflow-auto">
+					<code class="language-svelte">{@html codeContent}</code>
+				</pre>
+				</div>
+			{:else}
+				<div class="p-4 text-gray-500">No code available</div>
+			{/if}
+		</TabsContent>
+	</Tabs>
 </div>
 
 <style>
