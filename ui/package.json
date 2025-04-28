@@ -29,6 +29,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"shiki": "^3.3.0",
+		"shiki-transformer-copy-button": "^0.0.3",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "3",

@@ -3,6 +3,7 @@ import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { createHighlighter } from 'shiki';
 import { escapeSvelte } from 'mdsvex';
+import { addCopyButton } from 'shiki-transformer-copy-button';
 
 const highlighter = await createHighlighter({
 	themes: ['vitesse-black', 'vitesse-light'],
@@ -26,7 +27,8 @@ const MDSVEX_CONFIG = defineConfig({
 					themes: {
 						light: 'vitesse-light',
 						dark: 'vitesse-black'
-					}
+					},
+					transformers: [addCopyButton()]
 				})
 			);
 			return `{@html \`${html}\` }`;
