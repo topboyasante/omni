@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { COMPONENT_LIST } from './component-list';
 	import type { ComponentItem } from './types';
-	import Prism from 'prismjs';
-	import 'prismjs/components/prism-typescript';
-	import 'prismjs/components/prism-javascript';
-	import 'prism-svelte';
+	import { codeToHtml } from 'shiki';
 	import Tabs from '../tabs/tabs.svelte';
 	import TabsList from '../tabs/tabs-list.svelte';
 	import TabsTrigger from '../tabs/tabs-trigger.svelte';
@@ -26,8 +23,8 @@
 	let codeContent = $state('');
 	$effect(() => {
 		if (codePromise) {
-			codePromise.then((rawCode) => {
-				codeContent = Prism.highlight(rawCode.default, Prism.languages.svelte, 'svelte');
+			codePromise.then(async (rawCode) => {
+				codeContent = await codeToHtml(rawCode.default, { lang: 'svelte', theme: 'vitesse-black' });
 			});
 		}
 	});
@@ -66,9 +63,8 @@
 			<TabsContent value="code">
 				{#if codePromise}
 					<div class="p-4">
-						<pre class=" text-white p-4 rounded-lg overflow-auto">
-						<code class="language-svelte">{@html codeContent}</code>
-					</pre>
+						<!-- Render the Shiki-highlighted HTML directly -->
+						<div class="rounded-lg overflow-auto">{@html codeContent}</div>
 					</div>
 				{:else}
 					<div class="p-4 text-gray-500">No code available</div>

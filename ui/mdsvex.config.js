@@ -1,7 +1,14 @@
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import { join } from 'path';
-import Prism from 'prismjs';
 import { fileURLToPath } from 'url';
+import { createHighlighter } from 'shiki';
+import { escapeSvelte } from 'mdsvex';
+
+const theme = 'vitesse-black';
+const highlighter = await createHighlighter({
+	themes: ['vitesse-black'],
+	langs: ['javascript', 'typescript']
+});
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -13,13 +20,9 @@ const MDSVEX_CONFIG = defineConfig({
 		_: path_to_layout
 	},
 	highlight: {
-		highlighter: (code, lang = 'text') => {
-			const highlighted = Prism.highlight(
-				code,
-				Prism.languages[lang] || Prism.languages.text,
-				lang
-			);
-			return `<pre class="language-${lang}"><code class="language-${lang}">${highlighted}</code></pre>`;
+		highlighter: async (code, lang = 'text') => {
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+			return `{@html \`${html}\` }`;
 		}
 	}
 });
