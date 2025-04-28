@@ -6,6 +6,7 @@
 	import TabsList from '../tabs/tabs-list.svelte';
 	import TabsTrigger from '../tabs/tabs-trigger.svelte';
 	import TabsContent from '../tabs/tabs-content.svelte';
+	import { Check, Clipboard } from '@lucide/svelte';
 
 	interface ComponentPreviewProps {
 		name: string;
@@ -21,13 +22,42 @@
 	const codePromise = $derived(componentData?.code);
 
 	let codeContent = $state('');
+	let rawCodeText = $state('');
 	$effect(() => {
 		if (codePromise) {
 			codePromise.then(async (rawCode) => {
-				codeContent = await codeToHtml(rawCode.default, { lang: 'svelte', theme: 'vitesse-black' });
+				rawCodeText = rawCode.default;
+				codeContent = await codeToHtml(rawCode.default, {
+					lang: 'svelte',
+					themes: {
+						dark: 'vitesse-black',
+						light: 'vitesse-light',
+					}
+				});
 			});
 		}
 	});
+
+	function copyCodeToClipboard() {
+		if (rawCodeText) {
+			navigator.clipboard
+				.writeText(rawCodeText)
+				.then(() => {
+					showCopySuccess();
+				})
+				.catch((err) => {
+					console.error('Failed to copy code: ', err);
+				});
+		}
+	}
+
+	let copySuccess = $state(false);
+	function showCopySuccess() {
+		copySuccess = true;
+		setTimeout(() => {
+			copySuccess = false;
+		}, 2000);
+	}
 </script>
 
 <div class="w-full">
@@ -44,8 +74,27 @@
 				</div>
 			</TabsTrigger>
 		</TabsList>
-		<div class="border rounded-lg my-5">
-			<TabsContent value="preview" class="flex justify-center items-center min-h-[250px]">
+		<div class="my-5 relative">
+			{#if codePromise}
+				<div class="absolute top-5 right-5 z-10">
+					<button
+						onclick={copyCodeToClipboard}
+						class="flex items-center gap-1 p-2 text-xs rounded hover:bg-muted text-muted-foreground transition-colors"
+					>
+						{#if copySuccess}
+							<Check class="h-4 w-4 text-green-500" />
+							Copied!
+						{:else}
+							<Clipboard class="h-4 w-4" />
+						{/if}
+					</button>
+				</div>
+			{/if}
+
+			<TabsContent
+				value="preview"
+				class="flex justify-center items-center min-h-[280px] border rounded-lg"
+			>
 				{#if selectedComponent}
 					<div class="p-4">
 						{#await selectedComponent}
@@ -62,9 +111,10 @@
 			</TabsContent>
 			<TabsContent value="code">
 				{#if codePromise}
-					<div class="p-4">
-						<!-- Render the Shiki-highlighted HTML directly -->
-						<div class="rounded-lg overflow-auto">{@html codeContent}</div>
+					<div class="rounded-lg">
+						<div class="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+							{@html codeContent}
+						</div>
 					</div>
 				{:else}
 					<div class="p-4 text-gray-500">No code available</div>

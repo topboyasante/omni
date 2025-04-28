@@ -4,9 +4,8 @@ import { fileURLToPath } from 'url';
 import { createHighlighter } from 'shiki';
 import { escapeSvelte } from 'mdsvex';
 
-const theme = 'vitesse-black';
 const highlighter = await createHighlighter({
-	themes: ['vitesse-black'],
+	themes: ['vitesse-black', 'vitesse-light'],
 	langs: ['javascript', 'typescript']
 });
 
@@ -21,7 +20,15 @@ const MDSVEX_CONFIG = defineConfig({
 	},
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+			const html = escapeSvelte(
+				highlighter.codeToHtml(code, {
+					lang,
+					themes: {
+						light: 'vitesse-light',
+						dark: 'vitesse-black'
+					}
+				})
+			);
 			return `{@html \`${html}\` }`;
 		}
 	}
