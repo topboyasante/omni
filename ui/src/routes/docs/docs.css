@@ -1,0 +1,124 @@
+/* Lists */
+ul,
+ol {
+	@apply pl-6 mb-4 text-sm text-muted-foreground;
+}
+
+ul {
+	@apply list-disc;
+}
+
+ol {
+	@apply list-decimal;
+}
+
+li {
+	@apply mb-1 leading-7;
+}
+
+/* Nested lists */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	@apply mt-1 mb-0;
+}
+
+/* Definition lists */
+dl {
+	@apply mb-4 text-sm text-muted-foreground;
+}
+
+dt {
+	@apply font-medium text-primary;
+}
+
+dd {
+	@apply pl-4 mb-2;
+}
+
+/* Blockquotes */
+blockquote {
+	@apply pl-4 border-l-4 border-primary/30 italic text-muted-foreground my-4;
+}
+
+blockquote p {
+	@apply text-muted-foreground;
+}
+
+/* Code */
+code {
+	@apply bg-muted px-1.5 py-0.5 rounded text-xs font-mono text-muted-foreground;
+}
+
+pre {
+	@apply bg-muted p-4 rounded-md overflow-x-auto mb-4;
+}
+
+pre code {
+	@apply bg-transparent p-0 text-sm text-muted-foreground block;
+}
+
+/* Horizontal rule */
+hr {
+	@apply border-t border-border my-8;
+}
+
+/* Links */
+a {
+	@apply text-primary hover:underline;
+}
+
+/* Tables */
+table {
+	@apply w-full text-sm border-collapse mb-4;
+}
+
+th {
+	@apply text-left font-medium p-2 border-b-2 border-border text-primary;
+}
+
+td {
+	@apply p-2 border-b border-border text-muted-foreground;
+}
+
+/* Strikethrough */
+del {
+	@apply line-through text-muted-foreground;
+}
+
+/* Emphasis */
+em {
+	@apply italic;
+}
+
+strong {
+	@apply font-bold text-primary;
+}
+
+/* Images */
+img {
+	@apply max-w-full h-auto rounded-md my-4;
+}
+
+/* Task lists */
+ul.contains-task-list {
+	@apply list-none pl-0;
+}
+
+ul.contains-task-list li {
+	@apply flex items-start gap-2;
+}
+
+input[type='checkbox'] {
+	@apply mt-1;
+}
+
+/* Custom list markers for better spacing */
+ul li::marker {
+	@apply text-primary/70;
+}
+
+ol li::marker {
+	@apply text-primary/70;
+}

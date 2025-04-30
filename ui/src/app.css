@@ -108,36 +108,47 @@
 }
 
 body {
-	font-family: 'IBM Plex Sans Variable', sans-serif;
+	font-family: 'Inter Variable', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	line-height: 1.6;
+	font-size: 16px;
+	font-style: normal;
+	letter-spacing: -0.011em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
 }
 
 h1 {
-	@apply text-2xl font-bold;
+	@apply text-2xl font-extrabold text-primary tracking-tight mb-3;
 }
 
 h2 {
-	@apply text-xl font-bold;
+	@apply text-xl font-bold tracking-tight text-primary mb-2 mt-8;
 }
 
 h3 {
-	@apply text-lg font-bold;
+	@apply text-lg font-bold text-primary mb-2 mt-6;
 }
 
 h4 {
-	@apply text-base font-semibold;
+	@apply text-lg font-medium text-primary mb-1 mt-5;
 }
 
 h5 {
-	@apply text-base font-medium;
+	@apply text-lg font-medium text-primary mb-1 mt-4;
 }
 
 h6 {
-	@apply text-sm font-medium;
+	@apply text-base font-medium text-primary mb-1 mt-3;
 }
 
 p {
-	@apply text-sm leading-5;
+	@apply leading-7 text-muted-foreground mb-1 text-sm;
 }
+
 
 .shiki {
 	@apply px-5 py-2.5 rounded-md text-sm;
@@ -152,7 +163,6 @@ html.dark .shiki span {
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
-
 
 /* for the copy button on the code snippets */
 pre:has(code) {

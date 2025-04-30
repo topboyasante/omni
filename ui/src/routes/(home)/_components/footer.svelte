@@ -12,7 +12,7 @@
 		>
 			<div>
 				<div class="text-balance text-sm leading-loose text-muted-foreground">
-					Built by{' '}
+					Made in 🇬🇭 by{' '}
 					<a
 						href={siteConfig.links.twitter}
 						target="_blank"

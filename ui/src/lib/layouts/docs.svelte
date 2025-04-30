@@ -90,9 +90,10 @@
 			</nav>
 		</div>
 
-		<!-- Main content area -->
-		<div class="flex-1">
-			{@render children()}
+		<div class="flex-1 py-8">
+			<div class="max-w-3xl mx-auto">
+				{@render children()}
+			</div>
 		</div>
 	</div>
 </div>

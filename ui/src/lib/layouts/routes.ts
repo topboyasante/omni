@@ -9,6 +9,9 @@ export const DOCS_ROUTES = [
 	},
 	{
 		section: 'Components',
-		items: [{ title: 'Button', href: '/docs/components/button' }]
+		items: [
+			{ title: 'Button', href: '/docs/components/button' },
+			{ title: 'Tabs', href: '/docs/components/tabs' }
+		]
 	}
 ];
