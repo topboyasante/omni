@@ -1,7 +1,7 @@
-<div class="p-3">
+<div class="py-10 px-5 border-x border-dashed min-h-screen">
 	<section class="mb-16">
-		<h1 class="text-primary mb-6 text-4xl font-extrabold leading-tight md:text-5xl">Omni</h1>
-		<p class="text-muted-foreground mb-10 text-lg">
+		<h1 class="text-primary text-3xl font-extrabold leading-tight">Omni</h1>
+		<p class="text-muted-foreground mb-10 text-base">
 			Elegant, user-friendly, dependency-free (90% of the time, I swear) UI components and blocks
 			for your SvelteKit projects. Easily integrate into your applications. Open source and free for
 			all.

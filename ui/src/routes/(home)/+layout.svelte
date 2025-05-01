@@ -1,12 +1,7 @@
 <script lang="ts">
-	import Footer from './_components/footer.svelte';
-	import Navbar from './_components/navbar.svelte';
-
 	let { children } = $props();
 </script>
 
-<Navbar />
-<div class="max-w-screen-lg mx-auto min-h-screen p-3">
+<div class="max-w-screen-xl mx-auto min-h-screen">
 	{@render children()}
 </div>
-<Footer />

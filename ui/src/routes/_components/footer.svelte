@@ -3,10 +3,8 @@
 	import { siteConfig } from '$lib/config';
 </script>
 
-<div class="border-border border-dotted border-t-1">
-	<div
-		class="mx-auto max-w-screen-lg px-4 sm:px-8 border-border border-dotted border-r-1 border-l-1"
-	>
+<div class="border-dashed border-t">
+	<div class="mx-auto max-w-screen-xl px-4 sm:px-8">
 		<footer
 			class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-5"
 		>
@@ -18,7 +16,6 @@
 						target="_blank"
 						rel="noreferrer"
 						class="font-medium underline underline-offset-4"
-						data-umami-event="View Twitter Profile"
 					>
 						topboyasante
 					</a>
@@ -28,7 +25,6 @@
 						target="_blank"
 						rel="noreferrer"
 						class="font-medium underline underline-offset-4"
-						data-umami-event="View GitHub Repository"
 					>
 						GitHub
 					</a>
