@@ -1,12 +1,9 @@
 <script lang="ts">
+	import { Check, Clipboard } from '@lucide/svelte';
+	import { codeToHtml } from 'shiki';
+	import { Tabs, TabsContent, TabsList, TabsTrigger } from '../tabs';
 	import { COMPONENT_LIST } from './component-list';
 	import type { ComponentItem } from './types';
-	import { codeToHtml } from 'shiki';
-	import Tabs from '../tabs/tabs.svelte';
-	import TabsList from '../tabs/tabs-list.svelte';
-	import TabsTrigger from '../tabs/tabs-trigger.svelte';
-	import TabsContent from '../tabs/tabs-content.svelte';
-	import { Check, Clipboard } from '@lucide/svelte';
 
 	interface ComponentPreviewProps {
 		name: string;
@@ -31,7 +28,7 @@
 					lang: 'svelte',
 					themes: {
 						dark: 'vitesse-black',
-						light: 'vitesse-light',
+						light: 'vitesse-light'
 					}
 				});
 			});
@@ -109,7 +106,7 @@
 					<div class="p-4 text-gray-500">Component not found</div>
 				{/if}
 			</TabsContent>
-			<TabsContent value="code">
+			<TabsContent value="code" class="border rounded-lg">
 				{#if codePromise}
 					<div class="rounded-lg">
 						<div class="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">

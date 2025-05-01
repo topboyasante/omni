@@ -149,9 +149,8 @@ p {
 	@apply leading-7 text-muted-foreground mb-1 text-sm;
 }
 
-
 .shiki {
-	@apply px-5 py-2.5 rounded-md text-sm;
+	@apply px-5 py-2.5 rounded-lg text-sm;
 }
 
 html.dark .shiki,

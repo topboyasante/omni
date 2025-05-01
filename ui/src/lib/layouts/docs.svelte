@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { DOCS_ROUTES } from './routes';
 	import { onMount } from 'svelte';
+	import "./docs.css"
 
 	let { children } = $props();
 	let isMobileMenuOpen = $state(false);
@@ -91,7 +92,7 @@
 		</div>
 
 		<div class="flex-1 py-8">
-			<div class="max-w-3xl mx-auto">
+			<div class="docs-content">
 				{@render children()}
 			</div>
 		</div>

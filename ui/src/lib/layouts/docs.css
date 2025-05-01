@@ -1,0 +1,168 @@
+/* Documentation-specific styles for docs-content */
+.docs-content {
+	@apply max-w-3xl mx-auto;
+}
+
+/* Headings */
+.docs-content h1 {
+	@apply text-2xl font-bold text-primary mt-6 mb-4;
+}
+
+.docs-content h2 {
+	@apply text-xl font-semibold text-primary mt-5 mb-3;
+}
+
+.docs-content h3 {
+	@apply text-xl font-medium text-primary mt-4 mb-2;
+}
+
+/* Lists */
+.docs-content ul,
+.docs-content ol {
+	@apply pl-6 mb-4 text-sm text-muted-foreground;
+}
+
+.docs-content ul {
+	@apply list-disc;
+}
+
+.docs-content ol {
+	@apply list-decimal;
+}
+
+.docs-content li {
+	@apply mb-1 leading-7;
+}
+
+/* Nested lists */
+.docs-content ul ul,
+.docs-content ol ol,
+.docs-content ul ol,
+.docs-content ol ul {
+	@apply mt-1 mb-0;
+}
+
+/* Definition lists */
+.docs-content dl {
+	@apply mb-4 text-sm text-muted-foreground;
+}
+
+.docs-content dt {
+	@apply font-medium text-primary;
+}
+
+.docs-content dd {
+	@apply pl-4 mb-2;
+}
+
+/* Blockquotes */
+.docs-content blockquote {
+	@apply pl-4 border-l-4 border-primary/30 italic text-muted-foreground my-4;
+}
+
+.docs-content blockquote p {
+	@apply text-muted-foreground;
+}
+
+
+/* Horizontal rule */
+.docs-content hr {
+	@apply border-t border-border my-8;
+}
+
+/* Links */
+.docs-content a {
+	@apply text-primary hover:underline;
+}
+
+/* Tables */
+.docs-content table {
+	@apply w-full text-sm border-collapse mb-4;
+}
+
+.docs-content th {
+	@apply text-left font-medium p-2 border-b-2 border-border text-primary;
+}
+
+.docs-content td {
+	@apply p-2 border-b border-border text-muted-foreground;
+}
+
+/* Strikethrough */
+.docs-content del {
+	@apply line-through text-muted-foreground;
+}
+
+/* Emphasis */
+.docs-content em {
+	@apply italic;
+}
+
+.docs-content strong {
+	@apply font-bold text-primary;
+}
+
+/* Images */
+.docs-content img {
+	@apply max-w-full h-auto rounded-md my-4;
+}
+
+/* Task lists */
+.docs-content ul.contains-task-list {
+	@apply list-none pl-0;
+}
+
+.docs-content ul.contains-task-list li {
+	@apply flex items-start gap-2;
+}
+
+.docs-content input[type='checkbox'] {
+	@apply mt-1;
+}
+
+/* Custom list markers */
+.docs-content ul li::marker {
+	@apply text-primary/70;
+}
+
+.docs-content ol li::marker {
+	@apply text-primary/70;
+}
+
+/* Paragraphs */
+.docs-content p {
+	@apply text-muted-foreground mb-4 leading-relaxed;
+}
+
+/* Dark mode support */
+
+.dark .docs-content h1,
+.dark .docs-content h2,
+.dark .docs-content h3 {
+	@apply text-primary/90;
+}
+
+.dark .docs-content p {
+	@apply text-gray-300;
+}
+
+.dark .docs-content a {
+	@apply text-primary/80;
+}
+
+.dark .docs-content blockquote {
+	@apply border-primary/50 text-gray-400;
+}
+
+.dark .docs-content table th {
+	@apply text-primary/90;
+}
+
+.dark .docs-content table td {
+	@apply text-gray-300;
+}
+
+.dark .docs-content ul li::marker,
+.dark .docs-content ol li::marker {
+	@apply text-primary/60;
+}
