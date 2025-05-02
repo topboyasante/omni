@@ -13,7 +13,7 @@ Toggle between light and dark themes in your SvelteKit app.
 
 ## Setting Up
 
-This component relies on the `mode-watcher` package. We need to install that:
+This component relies on the [`mode-watcher`](https://www.npmjs.com/package/mode-watcher) package. We need to install that:
 <InstallationSnippets
  packageName="mode-watcher"
  hasBunVersion=true

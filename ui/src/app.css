@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
 	:root {
 		--background: 223.81 0% 98.68%;
@@ -49,7 +48,6 @@
 		--shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
 		--shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
 	}
-
 	.dark {
 		--background: 0 0% 0%;
 		--foreground: 223.81 -172.52% 100%;
@@ -97,7 +95,6 @@
 		--shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
 	}
 }
-
 @layer base {
 	* {
 		@apply border-border;
@@ -106,7 +103,6 @@
 		@apply bg-background text-foreground;
 	}
 }
-
 body {
 	font-family: 'Inter Variable', sans-serif;
 	font-optical-sizing: auto;
@@ -120,39 +116,37 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
 }
-
 h1 {
 	@apply text-2xl font-extrabold text-primary tracking-tight mb-3;
 }
-
 h2 {
 	@apply text-xl font-bold tracking-tight text-primary mb-2 mt-8;
 }
-
 h3 {
 	@apply text-lg font-bold text-primary mb-2 mt-6;
 }
-
 h4 {
 	@apply text-lg font-medium text-primary mb-1 mt-5;
 }
-
 h5 {
 	@apply text-lg font-medium text-primary mb-1 mt-4;
 }
-
 h6 {
 	@apply text-base font-medium text-primary mb-1 mt-3;
 }
-
 p {
 	@apply leading-7 text-muted-foreground mb-1 text-sm;
 }
-
 .shiki {
-	@apply px-5 py-2.5 rounded-lg text-sm;
+	@apply rounded-lg text-sm;
+	padding: 0;
 }
-
+.shiki code {
+	@apply px-5 py-2.5 no-scrollbar;
+	display: block;
+	overflow: auto;
+	max-height: 400px;
+}
 html.dark .shiki,
 html.dark .shiki span {
 	color: var(--shiki-dark) !important;
@@ -162,12 +156,20 @@ html.dark .shiki span {
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
-
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
 /* for the copy button on the code snippets */
 pre:has(code) {
 	position: relative;
+	overflow: visible; /* This ensures the button can be seen outside the scrollable area */
 }
-
 pre button.copy {
 	position: absolute;
 	right: 12px;
@@ -176,6 +178,9 @@ pre button.copy {
 	width: 28px;
 	padding: 0;
 	display: flex;
+	z-index: 10; /* Ensure button appears above code */
+	background-color: var(--background); /* Use your theme background */
+	border-radius: 4px;
 
 	& span {
 		width: 100%;
@@ -184,23 +189,19 @@ pre button.copy {
 		background-position: center;
 		background-size: cover;
 	}
-
 	& .ready {
 		@apply size-4;
 		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsaXBib2FyZC1pY29uIGx1Y2lkZS1jbGlwYm9hcmQiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjQiIHg9IjgiIHk9IjIiIHJ4PSIxIiByeT0iMSIvPjxwYXRoIGQ9Ik0xNiA0aDJhMiAyIDAgMCAxIDIgMnYxNGEyIDIgMCAwIDEtMiAySDZhMiAyIDAgMCAxLTItMlY2YTIgMiAwIDAgMSAyLTJoMiIvPjwvc3ZnPg==');
 	}
-
 	& .success {
 		@apply size-4;
 		display: none;
 		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
 	}
-
 	&.copied {
 		& .success {
 			display: block;
 		}
-
 		& .ready {
 			display: none;
 		}

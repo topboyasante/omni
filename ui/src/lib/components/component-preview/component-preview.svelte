@@ -60,16 +60,8 @@
 <div class="w-full">
 	<Tabs defaultValue="preview">
 		<TabsList>
-			<TabsTrigger value="preview">
-				<div>
-					<p>Preview</p>
-				</div>
-			</TabsTrigger>
-			<TabsTrigger value="code">
-				<div>
-					<p>Code</p>
-				</div>
-			</TabsTrigger>
+			<TabsTrigger value="preview">Preview</TabsTrigger>
+			<TabsTrigger value="code">Code</TabsTrigger>
 		</TabsList>
 		<div class="my-5 relative">
 			{#if codePromise}

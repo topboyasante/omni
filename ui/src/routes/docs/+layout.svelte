@@ -5,14 +5,33 @@
 	let { children } = $props();
 </script>
 
+<!-- there's a navbar in the parent layout -->
 <div class="max-w-screen-xl mx-auto xl:border-x min-h-screen xl:border-dashed">
 	<div
 		class="flex-1 items-start md:grid md:grid-cols-[230px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10"
 	>
+		<!-- Sidebar with integrated styling -->
 		<aside
-			class="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed md:sticky md:block"
+			class="hidden md:block md:sticky top-14 h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed"
+			style="
+				overflow: hidden;
+				position: sticky;
+				scrollbar-width: thin;
+				scrollbar-color: var(--muted) transparent;
+			"
 		>
-			<div class="h-full overflow-auto py-1 px-3 lg:py-2">
+			<!-- Scrollable content inside the fixed sidebar -->
+			<div
+				class="h-full py-1 px-3 lg:py-2"
+				style="
+					overflow-y: auto;
+					overflow-x: hidden;
+					padding-bottom: 2rem;
+					height: 100%;
+					scrollbar-width: thin;
+					scrollbar-color: var(--muted) transparent;
+				"
+			>
 				{#each DOCS_ROUTES as section}
 					<div class="mb-6">
 						<h3
@@ -45,3 +64,21 @@
 		</div>
 	</div>
 </div>
+
+<!-- there's a footer in the parent layout -->
+
+<style>
+	/* Target the scrollbars only inside the sidebar div */
+	aside div::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	aside div::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	aside div::-webkit-scrollbar-thumb {
+		background-color: var(--muted);
+		border-radius: 20px;
+	}
+</style>

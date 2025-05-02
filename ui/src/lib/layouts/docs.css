@@ -64,7 +64,6 @@
 	@apply text-muted-foreground;
 }
 
-
 /* Horizontal rule */
 .docs-content hr {
 	@apply border-t border-border my-8;
