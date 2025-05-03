@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Check, Clipboard } from '@lucide/svelte';
 	import { codeToHtml } from 'shiki';
-	import { Tabs, TabsContent, TabsList, TabsTrigger } from '../tabs';
+	import { Tabs, TabsList, TabsTrigger, TabsContent } from '../tabs';
 	import { COMPONENT_LIST } from './component-list';
 	import type { ComponentItem } from './types';
 

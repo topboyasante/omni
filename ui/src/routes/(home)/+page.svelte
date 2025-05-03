@@ -1,3 +1,7 @@
+<script>
+	import Button from '$lib/components/button/button.svelte';
+</script>
+
 <div class="py-10 px-5 border-x border-dashed min-h-screen">
 	<section class="mb-16">
 		<h1 class="text-primary text-3xl font-extrabold leading-tight">Omni</h1>
@@ -8,7 +12,7 @@
 		</p>
 
 		<div>
-			<a href="/docs/introduction">Get Started</a>
+			<a href="/docs/introduction"> <Button>Get Started</Button></a>
 		</div>
 	</section>
 	<section class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"></section>
