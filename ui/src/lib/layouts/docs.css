@@ -5,15 +5,15 @@
 
 /* Headings */
 .docs-content h1 {
-	@apply text-2xl font-bold text-primary mt-6 mb-4;
+	@apply text-2xl font-bold tracking-tight text-primary mt-6 mb-4;
 }
 
 .docs-content h2 {
-	@apply text-xl font-semibold text-primary mt-5 mb-3;
+	@apply text-xl font-semibold tracking-tight text-primary mt-5 mb-3;
 }
 
 .docs-content h3 {
-	@apply text-xl font-medium text-primary mt-4 mb-2;
+	@apply text-lg font-semibold tracking-tight text-primary mt-4 mb-2;
 }
 
 /* Lists */
