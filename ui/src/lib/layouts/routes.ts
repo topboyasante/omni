@@ -9,6 +9,7 @@ export const DOCS_ROUTES = [
 	{
 		section: 'Components',
 		items: [
+			{ title: 'Accordion', href: '/docs/components/accordion' },
 			{ title: 'Button', href: '/docs/components/button' },
 			{ title: 'Tabs', href: '/docs/components/tabs' }
 		]

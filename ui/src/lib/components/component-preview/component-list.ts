@@ -18,5 +18,11 @@ export const COMPONENT_LIST: ComponentItem[] = [
 		description: 'A customizable tabs component.',
 		component: import('../tabs/usage.svelte'),
 		code: import('../tabs/usage.svelte?raw')
+	},
+	{
+		name: 'Accordion',
+		description: 'A customizable tabs component.',
+		component: import('../accordion/usage.svelte'),
+		code: import('../accordion/usage.svelte?raw')
 	}
 ] as const;

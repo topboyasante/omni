@@ -16,7 +16,10 @@
 	let isOpen = $derived(openValues.has(value));
 </script>
 
-<div class="border-b overflow-hidden" data-state={isOpen ? 'open' : 'closed'}>
+<div
+	class="border-b overflow-hidden {isOpen ? 'pb-2' : ''}"
+	data-state={isOpen ? 'open' : 'closed'}
+>
 	{#if isOpen}
 		<div transition:slide={{ duration: 300, easing: (t) => t * (2 - t) }}>
 			{@render children()}
