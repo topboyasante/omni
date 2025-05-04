@@ -25,7 +25,7 @@
 	const config = pref.get('@omni/config');
 
 	let copySuccess = $state(false);
-	let selectedCommand = $state(config?.packageManager);
+	let selectedCommand = $state(config?.packageManager || "npm");
 
 	function copyCodeToClipboard(packageManager: PackageManager) {
 		const command = installationMap[packageManager];
