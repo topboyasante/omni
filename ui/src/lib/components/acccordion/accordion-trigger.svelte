@@ -13,12 +13,11 @@
 	const { value } = $derived(getAccordionItemContext()());
 	const { toggleValue, openValues } = $derived(getAccordionContext()());
 
-	// Determine if this accordion item is open
 	let isOpen = $derived(openValues.has(value));
 </script>
 
 <button
-	class="flex w-full items-center justify-between text-left"
+	class="flex w-full items-center justify-between text-left py-2"
 	type="button"
 	aria-expanded={isOpen}
 	onclick={() => {

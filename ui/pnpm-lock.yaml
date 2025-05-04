@@ -8,18 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/ibm-plex-sans':
-        specifier: ^5.2.5
-        version: 5.2.5
       '@fontsource-variable/inter':
         specifier: ^5.2.5
         version: 5.2.5
       '@lucide/svelte':
         specifier: ^0.501.0
         version: 0.501.0(svelte@5.28.1)
-      '@types/prismjs':
-        specifier: ^1.26.5
-        version: 1.26.5
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -29,12 +23,6 @@ importers:
       mode-watcher:
         specifier: ^1.0.2
         version: 1.0.2(svelte@5.28.1)
-      prism-svelte:
-        specifier: ^0.5.0
-        version: 0.5.0
-      prismjs:
-        specifier: ^1.30.0
-        version: 1.30.0
       svelte-meta-tags:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.28.1)
@@ -316,9 +304,6 @@ packages:
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource-variable/ibm-plex-sans@5.2.5':
-    resolution: {integrity: sha512-SrvCxqJK3NI4JBroXsJdBZGfs6QVfY0lK2VIZIIgYPea+/LI/3zYOOTI0AVvrMrmBks87GJQfPGprftlO8yInQ==}
-
   '@fontsource-variable/inter@5.2.5':
     resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
 
@@ -557,9 +542,6 @@ packages:
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
-
-  '@types/prismjs@1.26.5':
-    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -1333,9 +1315,6 @@ packages:
   prism-svelte@0.4.7:
     resolution: {integrity: sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==}
 
-  prism-svelte@0.5.0:
-    resolution: {integrity: sha512-db91Bf3pRGKDPz1lAqLFSJXeW13mulUJxhycysFpfXV5MIK7RgWWK2E5aPAa71s8TCzQUXxF5JOV42/iOs6QkA==}
-
   prismjs@1.30.0:
     resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
     engines: {node: '>=6'}
@@ -1826,8 +1805,6 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
-  '@fontsource-variable/ibm-plex-sans@5.2.5': {}
-
   '@fontsource-variable/inter@5.2.5': {}
 
   '@humanfs/core@0.19.1': {}
@@ -2044,8 +2021,6 @@ snapshots:
   '@types/mdast@4.0.4':
     dependencies:
       '@types/unist': 3.0.3
-
-  '@types/prismjs@1.26.5': {}
 
   '@types/unist@2.0.11': {}
 
@@ -2827,8 +2802,6 @@ snapshots:
   prettier@3.5.3: {}
 
   prism-svelte@0.4.7: {}
-
-  prism-svelte@0.5.0: {}
 
   prismjs@1.30.0: {}
 
