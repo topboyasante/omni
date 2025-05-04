@@ -8,6 +8,7 @@
 	let { children } = $props();
 </script>
 
+
 <ModeWatcher />
 
 <Navbar />

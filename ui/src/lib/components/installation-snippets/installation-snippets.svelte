@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Check, Clipboard } from '@lucide/svelte';
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from '../tabs';
+	import { pref } from '$lib/utils/local-storage';
+	import type { PackageManager } from './types';
 
 	interface InstallationSnippetsProps {
 		packageName: string;
@@ -20,14 +22,16 @@
 		yarn: `yarn add ${isDevDependency ? '--dev ' : ''}${packageName}`,
 		...(hasBunVersion && { bun: `bun add ${isDevDependency ? '--dev ' : ''}${packageName}` })
 	};
+	const config = pref.get('@omni/config');
 
 	let copySuccess = $state(false);
-	let selectedCommand = $state(installationMap.npm);
+	let selectedCommand = $state(config?.packageManager);
 
-	function copyCodeToClipboard(code: string) {
-		if (code) {
+	function copyCodeToClipboard(packageManager: PackageManager) {
+		const command = installationMap[packageManager];
+		if (command) {
 			navigator.clipboard
-				.writeText(code)
+				.writeText(command)
 				.then(() => {
 					showCopySuccess();
 				})
@@ -43,30 +47,31 @@
 			copySuccess = false;
 		}, 2000);
 	}
+
+	function toggleCommand(command: keyof typeof installationMap) {
+		selectedCommand = command;
+		pref.set('@omni/config', {
+			packageManager: command
+		});
+	}
 </script>
 
 <div class="w-full">
-	<Tabs defaultValue="npm">
+	<Tabs defaultValue={selectedCommand as PackageManager}>
 		<TabsList>
-			<TabsTrigger value="npm" onClick={() => (selectedCommand = installationMap.npm)}
-				><code>npm</code></TabsTrigger
+			<TabsTrigger value="npm" onClick={() => toggleCommand('npm')}><code>npm</code></TabsTrigger>
+			<TabsTrigger value="pnpm" onClick={() => toggleCommand('pnpm')}><code>pnpm</code></TabsTrigger
 			>
-			<TabsTrigger value="pnpm" onClick={() => (selectedCommand = installationMap.pnpm)}
-				><code>pnpm</code></TabsTrigger
-			>
-			<TabsTrigger value="yarn" onClick={() => (selectedCommand = installationMap.yarn)}
-				><code>yarn</code></TabsTrigger
+			<TabsTrigger value="yarn" onClick={() => toggleCommand('yarn')}><code>yarn</code></TabsTrigger
 			>
 			{#if installationMap.bun}
-				<TabsTrigger value="bun" onClick={() => (selectedCommand = installationMap.bun as string)}
-					><code>bun</code></TabsTrigger
-				>
+				<TabsTrigger value="bun" onClick={() => toggleCommand('bun')}><code>bun</code></TabsTrigger>
 			{/if}
 		</TabsList>
 		<div class="my-5 relative">
 			<div class="absolute top-5 right-5 z-10">
 				<button
-					onclick={() => copyCodeToClipboard(selectedCommand)}
+					onclick={() => copyCodeToClipboard(selectedCommand as PackageManager)}
 					class="flex items-center gap-1 p-2 text-xs rounded hover:bg-muted text-muted-foreground transition-colors"
 				>
 					{#if copySuccess}
