@@ -24,7 +24,7 @@
 		toggleValue(value);
 	}}
 >
-	<span>
+	<span class="text-sm">
 		{@render children()}
 	</span>
 

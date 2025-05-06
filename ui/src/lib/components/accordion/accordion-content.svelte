@@ -21,7 +21,7 @@
 	data-state={isOpen ? 'open' : 'closed'}
 >
 	{#if isOpen}
-		<div transition:slide={{ duration: 300, easing: (t) => t * (2 - t) }}>
+		<div transition:slide={{ duration: 300, easing: (t) => t * (2 - t) }} class="text-sm">
 			{@render children()}
 		</div>
 	{/if}

@@ -1,5 +1,8 @@
 <script lang="ts" module>
-	export const getAccordionContext = () => getContext<() => AccordionData>('accordion');
+	// Use a unique key for your context names.
+	// https://youtu.be/XBVujg6Fn3A?t=450
+	export const accordionContextKey = Symbol('accordion');
+	export const getAccordionContext = () => getContext<() => AccordionData>(accordionContextKey);
 </script>
 
 <script lang="ts">
@@ -48,7 +51,7 @@
 		}
 	});
 
-	setContext('accordion', () => accordionData);
+	setContext(accordionContextKey, () => accordionData);
 </script>
 
 <div class={cn('flex flex-col', className)} role="region">

@@ -1,5 +1,10 @@
 <script lang="ts" module>
-	export const getAccordionItemContext = () => getContext<() => AccordionItemData>('accordionItem');
+	// Use a unique key for your context names.
+	// https://youtu.be/XBVujg6Fn3A?t=450
+	export const accordionItemContextKey = Symbol('accordionItem');
+
+	export const getAccordionItemContext = () =>
+		getContext<() => AccordionItemData>(accordionItemContextKey);
 </script>
 
 <script lang="ts">
@@ -20,7 +25,7 @@
 	let accordionItemData = $state({
 		value
 	});
-	setContext('accordionItem', () => accordionItemData);
+	setContext(accordionItemContextKey, () => accordionItemData);
 </script>
 
 <div class="border-b" data-state={isOpen ? 'open' : 'closed'}>

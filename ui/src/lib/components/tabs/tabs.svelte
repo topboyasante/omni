@@ -1,5 +1,9 @@
 <script lang="ts" module>
-	export const getTabContext = () => getContext<() => TabData>('tabs');
+	// Use a unique key for your context names.
+	// https://youtu.be/XBVujg6Fn3A?t=450
+	export const tabContextKey = Symbol('tabs');
+
+	export const getTabContext = () => getContext<() => TabData>(tabContextKey);
 </script>
 
 <script lang="ts">
@@ -24,7 +28,7 @@
 		tabData.currentValue = tab;
 	}
 
-	setContext('tabs', () => ({
+	setContext(tabContextKey, () => ({
 		defaultValue: tabData.defaultValue,
 		currentValue: tabData.currentValue,
 		onChange: handleTabChange
