@@ -12,7 +12,7 @@
 	>
 		<!-- Sidebar with integrated styling -->
 		<aside
-			class="hidden md:block md:sticky top-14 h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed"
+			class="hidden md:block md:sticky top-14 h-[calc(100vh-3.5rem)] w-full shrink-0 border-r border-dashed py-5"
 			style="
 				overflow: hidden;
 				position: sticky;

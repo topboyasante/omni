@@ -117,25 +117,25 @@ body {
 	scroll-behavior: smooth;
 }
 h1 {
-	@apply text-2xl font-extrabold text-primary tracking-tight mb-3;
+	@apply text-2xl font-extrabold text-primary tracking-tight;
 }
 h2 {
-	@apply text-xl font-bold tracking-tight text-primary mb-2 mt-8;
+	@apply text-xl font-bold tracking-tight text-primary;
 }
 h3 {
-	@apply text-lg font-bold tracking-tight text-primary mb-2 mt-6;
+	@apply text-lg font-bold tracking-tight text-primary;
 }
 h4 {
-	@apply text-lg font-medium text-primary mb-1 mt-5;
+	@apply text-lg font-semibold text-primary;
 }
 h5 {
-	@apply text-lg font-medium text-primary mb-1 mt-4;
+	@apply text-lg font-medium text-primary;
 }
 h6 {
-	@apply text-base font-medium text-primary mb-1 mt-3;
+	@apply text-base font-medium text-primary;
 }
 p {
-	@apply leading-7 text-muted-foreground mb-1 text-sm;
+	@apply leading-7 text-muted-foreground text-sm;
 }
 .shiki {
 	@apply rounded-lg text-sm;
