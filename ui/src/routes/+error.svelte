@@ -24,9 +24,7 @@
           </Button>
         </a>
   
-        <a href="mailto:support@example.com" class="text-sm font-semibold text-gray-600">
-          Contact support <span aria-hidden="true">→</span>
-        </a>
+        
       </div>
     </div>
   </main>
