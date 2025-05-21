@@ -30,5 +30,11 @@ export const COMPONENT_LIST: ComponentItem[] = [
 		description: 'A customizable modal component.',
 		component: import('../modal/usage.svelte'),
 		code: import('../modal/usage.svelte?raw')
+	},
+	{
+		name: 'Toast',
+		description: 'A customizable toast component.',
+		component: import('../toast/usage.svelte'),
+		code: import('../toast/usage.svelte?raw')
 	}
 ] as const;

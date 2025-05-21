@@ -12,7 +12,8 @@ export const DOCS_ROUTES = [
 			{ title: 'Accordion', href: '/docs/components/accordion' },
 			{ title: 'Button', href: '/docs/components/button' },
 			{ title: 'Modal', href: '/docs/components/modal' },
-			{ title: 'Tabs', href: '/docs/components/tabs' }
+			{ title: 'Tabs', href: '/docs/components/tabs' },
+			{ title: 'Toast', href: '/docs/components/toast' }
 		]
 	}
 ];
