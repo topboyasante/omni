@@ -14,5 +14,5 @@
 
 <Navbar />
 {@render children()}
-<Toast/>
+<Toast position="topLeft"/>
 <Footer />
