@@ -23,9 +23,9 @@
             toastParagraph = '';
         }, config.duration || 3000)
     }
-</script>
+</script>   
 
-<article class={["fixed bottom-8 min-w-[300px] transition-all right-8 bg-black z-[999] p-3 border rounded-md flex flex-col", showToast ? "translate-y-0" : "translate-y-[300%]"]}>
+<article class={["fixed bottom-8 min-w-[300px] transition-all right-8 z-[999] p-3 border rounded-md flex flex-col", showToast ? "translate-y-0" : "translate-y-[300%]"]}>
     <h6>{toastTitle}</h6>
     <p class="text-white">{toastParagraph}</p>
 </article>
