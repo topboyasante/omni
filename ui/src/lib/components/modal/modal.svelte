@@ -85,7 +85,7 @@
 
 <style>
 	dialog::backdrop {
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.8);
 		animation: backdrop-fade-in 0.3s ease forwards;
 	}
 
