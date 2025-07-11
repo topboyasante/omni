@@ -14,7 +14,8 @@ export const DOCS_ROUTES = [
 			{ title: 'Modal', href: '/docs/components/modal' },
 			{ title: 'Progress Bar', href: '/docs/components/progress' },
 			{ title: 'Tabs', href: '/docs/components/tabs' },
-			{ title: 'Toast', href: '/docs/components/toast' }
+			{ title: 'Toast', href: '/docs/components/toast' },
+			{ title: 'Label', href: '/docs/components/label' }
 		]
 	}
 ];
