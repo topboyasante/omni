@@ -1,5 +1,6 @@
 <script>
  import ComponentPreview from '$lib/components/component-preview/component-preview.svelte';
+ import CodePreview from '$lib/components/code-preview/code-preview.svelte';
  import InstallationSnippets from '$lib/components/installation-snippets/installation-snippets.svelte';
 </script>
 
@@ -11,13 +12,11 @@ A customizable progress bar component for your SvelteKit app.
 
 <ComponentPreview name="Progress" />
 
-## Setting Up
+## Getting Started
 
-This component is standalone and does not require additional dependencies. You can directly copy and use it in your project.
+This component is standalone and does not require additional dependencies. Copy the file below to your project:
 
-<br/>
-
-Copy the `<Progress/>` component:
+<CodePreview componentName="Progress" />
 
 ```ts
 <script lang="ts">

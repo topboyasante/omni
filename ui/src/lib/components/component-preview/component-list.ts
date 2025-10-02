@@ -48,5 +48,4 @@ export const COMPONENT_LIST: ComponentItem[] = [
 		description: 'A customizable label component.',
 		component: import('../label/usage.svelte'),
 		code: import('../label/usage.svelte?raw')
-	}
-] as const;
+	},] as const;

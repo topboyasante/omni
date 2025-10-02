@@ -1,5 +1,6 @@
 <script>
  import ComponentPreview from '$lib/components/component-preview/component-preview.svelte';
+ import CodePreview from '$lib/components/code-preview/code-preview.svelte';
  import InstallationSnippets from '$lib/components/installation-snippets/installation-snippets.svelte';
 </script>
 
@@ -13,7 +14,9 @@ An interactive accordion component to organize and toggle content in your Svelte
 
 ## Getting Started
 
-This component is self-contained and does not require any external libraries. Simply copy it into your project and start using it.
+This component consists of multiple files. Copy all the files below to your project:
+
+<CodePreview componentName="Accordion" />
 
 <br/>
 

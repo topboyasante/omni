@@ -11,7 +11,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"generate-component": "node scripts/generate-component.js",
+		"delete-component": "node scripts/delete-component.js"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
